@@ -14,4 +14,4 @@ async def introduction(ctx):
     await ctx.send("Well I hope that has answered some of your non-dino brain questions! If you require further assitónce with my commands, a list of them, or further FAQ's, run \"instinct!help\":sparkles: :tada: ")
     await ctx.send("Most importantly, always remember: **Survival is key.** :grinning:")
 
-bot.run("TOKEN")
+bot.run(os.environ['TOKEN'])
