@@ -5,7 +5,7 @@ import os
 bot = commands.Bot(command_prefix="instinct!", description="Survival Is Key.")
 
 @bot.command()
-async def introduction(ctx):
+async def introduction(ctx, param):
     await ctx.send("RAWR! BEEP-BOOP-BEEP-BOOP. Hello there human! I am REX_101! The security and interigations bot for this server! :sungalsses:")
     await ctx.send("I hope we can get along nicely :smiley:")
     await ctx.send(":thinking: **What am I?** I am the bot from the sole-purpose of the Roblox gaming company Instinct Survivial™!")
