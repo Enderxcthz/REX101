@@ -1,8 +1,13 @@
 import discord
 from discord.ext import commands
 import os
+import asyncio
 
 bot = commands.Bot(command_prefix="instinct!", description="Survival Is Key.")
+
+@bot.event
+async def on_ready():
+  print("REX_101 is now online, and ready to wreck havoc. >:D")
 
 @bot.command()
 async def introduction(ctx, param):
