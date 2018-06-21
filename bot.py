@@ -8,16 +8,6 @@ bot = commands.Bot(command_prefix="instinct!", description="Survival Is Key.")
 @bot.event
 async def on_ready():
   print("REX_101 is now online, and ready to wreck havoc. >:D")
-  
-@bot.event
-async def on_message(message):
-    # we do not want the bot to reply to itself
-    if message.author == bot.user:
-        return
-
-    if message.content.startswith('Good'):
-        msg = 'Yes, good indeed, THE TEST SUCEEDED! :tada: {0.author.mention}'.format(message)
-        await bot.send_message(message.channel, msg)
         
         
 
@@ -31,7 +21,12 @@ async def introduction(ctx):
     await ctx.send("Nope! Not just yet c;")
     await ctx.send("Well I hope that has answered some of your non-dino brain questions! If you require further assitónce with my commands, a list of them, or further FAQ's, run \"instinct!help\":sparkles: :tada:")
     await ctx.send("Most importantly, always remember: **Survival is key.** :grinning:")
+
     
+@bot.command()
+async def joined(member : discord.Member):
+    """Says when a member joined."""
+    await bot.say('**Welcome to the project {0.name}!** Be sure to read the #server-rules and join the official group :smiley:'.format(member))
 
 
 bot.run(os.environ['TOKEN'])
