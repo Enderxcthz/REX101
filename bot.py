@@ -9,6 +9,12 @@ bot = commands.Bot(command_prefix="instinct!", description="Survival Is Key.")
 @bot.event
 async def on_ready():
   print("REX_101 is now online, and ready to wreck havoc. >:D")
+  
+@bot.event
+async def joined(member : discord.Member)():
+    await bot.say('**Welcome to the project {0.name}!** Be sure to read the #server-rules and join the official group :smiley: {0.joined_at}'.format(member))
+
+
         
         
 
@@ -24,10 +30,5 @@ async def introduction(ctx):
     await ctx.send("Most importantly, always remember: **Survival is key.** :grinning:")
 
     
-@bot.command()
-async def joined(member : discord.Member):
-    """Says when a member joined."""
-    await bot.say('**Welcome to the project {0.name}!** Be sure to read the #server-rules and join the official group :smiley: {0.joined_at}'.format(member))
-
 
 bot.run(os.environ['TOKEN'])
