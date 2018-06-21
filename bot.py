@@ -11,7 +11,7 @@ async def on_ready():
   print("REX_101 is now online, and ready to wreck havoc. >:D")
   
 @bot.event
-async def joined(member : discord.Member)():
+async def joined(member : discord.Member):
     await bot.say('**Welcome to the project {0.name}!** Be sure to read the #server-rules and join the official group :smiley: {0.joined_at}'.format(member))
 
 
