@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import os
 import asyncio
+import random
 
 bot = commands.Bot(command_prefix="instinct!", description="Survival Is Key.")
 
@@ -26,7 +27,7 @@ async def introduction(ctx):
 @bot.command()
 async def joined(member : discord.Member):
     """Says when a member joined."""
-    await bot.say('**Welcome to the project {0.name}!** Be sure to read the #server-rules and join the official group :smiley:'.format(member))
+    await bot.say('**Welcome to the project {0.name}!** Be sure to read the #server-rules and join the official group :smiley: {0.joined_at}'.format(member))
 
 
 bot.run(os.environ['TOKEN'])
