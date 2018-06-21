@@ -25,7 +25,7 @@ async def introduction(ctx):
     await ctx.send("Most importantly, always remember: **Survival is key.** :grinning:")
     
 @bot.command()
-async def say(ctx, something):
+async def say(ctx, *, something):
     await ctx.send(something)
 
     
