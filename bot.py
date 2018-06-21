@@ -27,6 +27,11 @@ async def introduction(ctx):
 @bot.command()
 async def say(ctx, *, something):
     await ctx.send(something)
+    
+@bot.command()
+async def kick(ctx, member: discord.Member):
+    await member.kick()
+    await bot.say("**User was successfully kicked!**:white_check_mark:")
 
     
 
