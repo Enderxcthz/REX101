@@ -31,8 +31,25 @@ async def say(ctx, *, something):
 @bot.command()
 async def kick(ctx, member: discord.Member):
     await member.kick()
-    await ctx.send("**User was successfully kicked!**:white_check_mark:")
+    await ctx.send("**User was successfully kicked!** :white_check_mark:")
+    
+# ----------------------------------------------------------------------------------------
+    
+@bot.group(invoke_without_subcommand=True)
+async def idiot(ctx):
+    await ctx.send("**Invalid Syntax :x::** Please @MENTION the user to use this command.")
 
+@idiot.command(name="AdamHartford")
+async def idiot_AdamHartford(ctx):
+    await ctx.send("@AdamHartford#8272 You are an idiot! :D ")
+
+@idiot.command(name="aussiepopcorn")
+async def idiot_aussiepopcorn(ctx):
+    await ctx.send("@aussiepopcorn#3943 You are an idiot! :D")
+ 
+@idiot.command(name="Enderxcthz")
+async def idiot_Enderxcthz(ctx):
+    await ctx.send("Yo shut up idiot, tryna call my man, the myth, the legend Enderxcthz an \"idiot\"? Get the hell outta here :clap:")
     
 
 bot.run(os.environ['TOKEN'])
